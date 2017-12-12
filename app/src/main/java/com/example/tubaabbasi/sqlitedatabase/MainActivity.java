@@ -1,10 +1,12 @@
 package com.example.tubaabbasi.sqlitedatabase;
 
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.Random;
 
@@ -46,11 +48,33 @@ public class MainActivity extends AppCompatActivity {
         roll = r.nextInt(40);
         marks = r.nextInt(100);
 
-//        db.execSQL();
+        db.execSQL("Insert into MyTable values (" + Integer.toString(roll) + "," + Integer.toString(marks) + ") ");
+
+        // Record inserted
 
     }
 
     public void ShowRecords() {
+
+        Cursor c;
+        int temp;
+        String data;
+        data = "";
+
+        c = db.rawQuery("Select * from MyTable;", null);
+
+        c.moveToFirst();
+
+        for (int i = 0; c.moveToPosition(i); i++) {
+            temp = c.getInt(0); // column index = 0 i.e. roll num
+            data += Integer.toString(temp);
+            temp = c.getInt(1); // column index = 1 i.e. marks
+            data += "   " + Integer.toString(temp) + "\n";
+        }
+
+        ((TextView)findViewById(R.id.textview_records)).setText(data);
+
+
 
     }
 

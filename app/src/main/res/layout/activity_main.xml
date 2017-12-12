@@ -6,31 +6,47 @@
     android:layout_height="match_parent"
     tools:context="com.example.tubaabbasi.sqlitedatabase.MainActivity">
 
-    <TextView
-        android:id="@+id/textview_records"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Here you will see saved records"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="4dp">
 
-    <Button
-        android:id="@+id/button_insert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Insert Random Record In Database"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="31dp" />
+        <TextView
+            android:id="@+id/textview_records"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="178dp"
+            android:text="Here you will see saved records"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="262dp" />
 
-    <Button
-        android:id="@+id/button_get"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Show Random Record From Database"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="96dp" />
+        <Button
+            android:id="@+id/button_insert"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="64dp"
+            android:text="Insert Random Record In Database"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="31dp" />
+
+        <Button
+            android:id="@+id/button_get"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/button_insert"
+            android:layout_alignStart="@+id/button_insert"
+            android:layout_below="@+id/button_insert"
+            android:layout_marginTop="29dp"
+            android:text="Show Random Record From Database"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="194dp" />
+
+    </RelativeLayout>
+
 
 </android.support.constraint.ConstraintLayout>
